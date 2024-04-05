@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Sähköinen aloitelaatikko</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" />
+    <link rel="stylesheet" th:href="@{/css/linkit.css}" />
+  </head>
+  <body>
+    <h1>Aloitteet ja niiden tekijät</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Tekijän etunimi</th>
+          <th>Tekijän sukunimi</th>
+          <th>Tekijan sähköposti</th>
+          <th>Aloitteen kuvaus</th>
+          <th>Aloitteen päivämäära</th>
+        </tr>
+      </thead>
+      <tbody th:each="maker:${makers}">
+        <tr th:each="motion:${maker.motions}">
+          <td th:text="${maker.firstName}">firstName</td>
+          <td th:text="${maker.lastName}">lastName</td>
+          <td th:text="${maker.email}">email</td>
+          <td th:text="${motion.description}">description</td>
+          <td th:text="${motion.date}">date</td>
+        </tr>
+      </tbody>
+    </table>
+    <button>
+      <a href="index.html" th:href="@{/}">Takaisin kotisivulle</a>
+    </button>
+  </body>
+</html>

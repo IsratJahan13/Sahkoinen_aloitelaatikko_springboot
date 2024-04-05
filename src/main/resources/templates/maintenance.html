@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html>
+<head>
+    <title>Sähköinen aloitelaatikko</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" />
+    <link rel="stylesheet" th:href="@{/css/maintenance.css}" />
+</head>
+<body>
+    <h1>Uusi aloite</h1>
+    <form th:action="@{/maintenance}" method="POST">
+        <span>Tekijän etunimi: </span>
+        <input type="text" name="firstName"/><br>
+        <span>Tekijän sukunimi: </span>
+        <input type="text" name="lastName"/><br>
+        <span>Tekijan sähköposti: </span>
+        <input type="text" name="email"/><br>
+        <span>Aloitteen kuvaus: </span>
+        <input type="text" name="description"/><br>
+        <span>Aloitteen päivämäära: </span>
+        <input type="date" name="date"/><br>
+
+        <input type="submit" value="Submit" id="submit"/>
+    </form>
+
+    <button>
+        <a href="index.html" th:href="@{/}">Palaa kotisivulle</a>
+    </button>
+</body>
+</html>
